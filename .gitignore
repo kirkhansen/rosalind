@@ -63,3 +63,7 @@ target/
 
 # PyCharm
 .idea/*
+
+# leave .gitkeep files alone.
+
+*.gitkeep
