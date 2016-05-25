@@ -14,6 +14,12 @@ class BaseSequence(object):
         class_name = self.__class__.__name__
         return "{}(sequence='{}')".format(class_name, ''.join(self.sequence[:10]) + "...")
 
+    def transcribe(self):
+        return self.sequence.transcribe()
+
+    def translate(self):
+        return self.sequence.translate()
+
     @classmethod
     def many_from_file(cls, file_handle, file_format):
         for record in SeqIO.parse(file_handle, file_format):
