@@ -64,6 +64,8 @@ target/
 # PyCharm
 .idea/*
 
-# leave .gitkeep files alone.
+# ignore datafiles
+data_sets/*
 
+# leave .gitkeep files alone.
 *.gitkeep
