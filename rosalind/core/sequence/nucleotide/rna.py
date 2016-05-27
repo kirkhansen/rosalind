@@ -14,7 +14,6 @@ RNA(sequence='GUGCAUCGAU...')
 """
 from Bio.Alphabet import IUPAC
 
-from rosalind.core.sequence.base_sequence import BaseSequence
 from rosalind.core.sequence.nucleotide.base import Base
 
 
