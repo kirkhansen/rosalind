@@ -9,12 +9,13 @@ DNA(sequence='GTGCATCGAT...')
 """
 from Bio.Alphabet import IUPAC
 
-from rosalind.core.sequence.base_sequence import BaseSequence
+from rosalind.core.sequence.nucleotide.base import Base
 
 
-class DNA(BaseSequence):
+class DNA(Base):
     def __init__(self, sequence):
         super(DNA, self).__init__(sequence, IUPAC.unambiguous_dna)
+        self.pairs = {'AT', 'GC'}
 
 if __name__ == '__main__':
     import doctest

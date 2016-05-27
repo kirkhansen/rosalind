@@ -1,7 +1,7 @@
 import os
 
 from rosalind.core.common.constants import DATA_DIR
-from rosalind.core.sequence.dna import DNA
+from rosalind.core.sequence.nucleotide.dna import DNA
 
 
 for dna_sequence in DNA.many_from_file(os.path.join(DATA_DIR, 'rosalind_kmp.txt'), 'fasta'):
