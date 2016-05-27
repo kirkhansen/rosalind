@@ -39,6 +39,12 @@ class BaseSequence(object):
     def __len__(self):
         return len(self._sequence)
 
+    def __iter__(self):
+        return iter(self._sequence)
+
+    def __getitem__(self, item):
+        return self._sequence[item]
+
     def transcribe(self):
         return self._sequence.transcribe()
 
@@ -60,6 +66,23 @@ class BaseSequence(object):
                 kmers[kmer] = str(overlapping_occurrences(str(self), kmer))
         return kmers
 
+    def get_failure_array(self):
+        """
+        Generate a failure array for the given dna sequence to be use with the KMP search.
+        :return: list
+        """
+        i = 0
+        # seed fails with 0
+        failure_array = [0] * len(self)
+
+        for m in range(2, len(self)):
+            while i > 0 and self[i] != self[m - 1]:
+                i = failure_array[i - 1]
+            if self[i] == self[m - 1]:
+                i += 1
+            failure_array[m - 1] = i
+
+        return failure_array
 
     @classmethod
     def many_from_file(cls, file_handle, file_format):
