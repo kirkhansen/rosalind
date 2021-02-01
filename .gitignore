@@ -1,0 +1,6 @@
+*__pycache__/
+*.egg-info/
+.python_version
+rosalind/data/
+*.swp
+
