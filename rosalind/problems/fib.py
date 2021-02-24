@@ -1,12 +1,14 @@
 from rosalind.utils import get_data_file
 
+
 def fib(n, k):
     f1, f2 = 1, 1
     n = int(n)
     k = int(k)
     for i in range(2, n):
-        f1, f2 = f2, k*f1 + f2
+        f1, f2 = f2, k * f1 + f2
     return f2
+
 
 def test():
     n, num_rabbit_pairs = 5, 3
@@ -22,5 +24,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

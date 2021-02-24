@@ -4,6 +4,7 @@ from pysam import FastaFile
 
 from rosalind.utils import get_data_file
 
+
 def get_consensus_string(profile_dict):
     consensus_string = ""
     total_bp = len(profile_dict["A"])
@@ -12,6 +13,7 @@ def get_consensus_string(profile_dict):
         col = {key: profile_dict[key][i] for key in bps}
         consensus_string += max(col, key=col.get)
     return consensus_string
+
 
 def get_profile_dict(matrix):
     num_cols = len(matrix[0])
@@ -33,10 +35,7 @@ def pprint_profile_dict(profile_dict):
 
 
 def create_dna_matrix(fasta):
-    return [
-        [bp for bp in fasta.fetch(reference)]
-        for reference in fasta.references
-    ]
+    return [[bp for bp in fasta.fetch(reference)] for reference in fasta.references]
 
 
 def main():
@@ -49,4 +48,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

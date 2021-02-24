@@ -20,15 +20,16 @@ UGC C      CGC R      AGC S      GGC G
 UGA Stop   CGA R      AGA R      GGA G
 UGG W      CGG R      AGG R      GGG G
 """
-_flat =  RNA_CODON_STRING.split()
+_flat = RNA_CODON_STRING.split()
 # zip dna code 'keys' with protein code 'values'
 RNA_CODON_LOOKUP = dict(zip(_flat[0::2], _flat[1::2]))
 
 
 def grouper(n, iterable, fillvalue=None):
-  "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
-  args = [iter(iterable)] * n
-  return zip_longest(fillvalue=fillvalue, *args)
+    "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
+    args = [iter(iterable)] * n
+    return zip_longest(fillvalue=fillvalue, *args)
+
 
 def translate_sequence(sequence):
     translation = ""
@@ -56,5 +57,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

@@ -4,7 +4,7 @@ from rosalind.utils import get_data_file
 def fibd(n, m):
     ages = [1] + [0] * (m - 1)
     for i in range(n - 1):
-      ages = [sum(ages[1:])] + ages[:-1]
+        ages = [sum(ages[1:])] + ages[:-1]
     return sum(ages)
 
 
@@ -22,5 +22,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

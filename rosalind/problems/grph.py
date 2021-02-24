@@ -22,6 +22,7 @@ def build_overlap_graph(fasta, overlap=3):
                 graph.append((reference, next_reference))
     return graph
 
+
 def print_graph(graph):
     for edge in graph:
         print(f"{edge[0]} {edge[1]}")
@@ -29,7 +30,7 @@ def print_graph(graph):
 
 def test():
     fasta = FastaFile(get_data_file("rosalind_grph_test.txt"))
-    expected =[
+    expected = [
         ("Rosalind_0498", "Rosalind_2391"),
         ("Rosalind_0498", "Rosalind_0442"),
         ("Rosalind_2391", "Rosalind_2323"),
@@ -39,12 +40,11 @@ def test():
     print("PASS")
 
 
-
 def main():
     fasta = FastaFile(get_data_file("rosalind_grph.txt"))
     print_graph(build_overlap_graph(fasta))
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

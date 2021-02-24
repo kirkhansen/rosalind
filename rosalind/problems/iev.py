@@ -12,12 +12,13 @@ genotytes:
 from rosalind.utils import get_data_file
 
 
-PROB_DOM_LOOKUP = [1, 1, 1, .75, .50, 0]
+PROB_DOM_LOOKUP = [1, 1, 1, 0.75, 0.50, 0]
 
 
 def get_expected_doms(population, num_children=2):
-    return sum(num_couples * num_children * PROB_DOM_LOOKUP[i]
-            for i, num_couples in enumerate(population)
+    return sum(
+        num_couples * num_children * PROB_DOM_LOOKUP[i]
+        for i, num_couples in enumerate(population)
     )
 
 
@@ -36,5 +37,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

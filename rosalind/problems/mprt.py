@@ -37,6 +37,7 @@ def test():
             print(protein_id)
             print(" ".join(motif_locations))
 
+
 def main():
     with get_data_file("rosalind_mprt.txt").open() as f:
         protein_ids = [line.rstrip() for line in f.readlines()]
@@ -49,5 +50,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()

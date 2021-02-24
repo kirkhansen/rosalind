@@ -9,7 +9,6 @@ def hamming_distance(sequence0, sequence1):
     return hamm_distance
 
 
-
 def test():
     expected = 7
     with get_data_file("rosalind_hamm.txt").open() as f:
@@ -25,7 +24,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #test()
+    # test()
     main()
-
-
